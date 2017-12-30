@@ -19,11 +19,14 @@ const doRollup = (libName, dirs) => {
         entry: es5Entry,
         external: [
             '@angular/common',
-            '@angular/core'
+            '@angular/core',
+            '@angular/platform-browser',
+            '@fortawesome/fontawesome',
         ],
         globals: {
             '@angular/common': 'ng.common',
-            '@angular/core': 'ng.core'
+            '@angular/core': 'ng.core',
+            '@angular/platform-browser': 'ng.platformBrowser',
         },
         moduleName: librarianUtils.caseConvert.dashToCamel(nameParts.package),
         onwarn: function rollupOnWarn(warning) {
